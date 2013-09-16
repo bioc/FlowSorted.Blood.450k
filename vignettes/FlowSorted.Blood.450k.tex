@@ -1,0 +1,46 @@
+%\VignetteIndexEntry{FlowSorted Blood 450k Guide}
+%\VignetteDepends{FlowSorted.Blood.450k}
+%\VignettePackage{FlowSorted.Blood.450k}
+\documentclass[12pt]{article}
+
+\usepackage{times}
+\usepackage{color,hyperref}
+\usepackage{fullpage}
+\usepackage[utf8]{inputenc} 
+\usepackage[square,sort,comma,numbers]{natbib}
+\definecolor{darkblue}{rgb}{0.0,0.0,0.75}
+\hypersetup{colorlinks,breaklinks,
+            linkcolor=darkblue,urlcolor=darkblue,
+            anchorcolor=darkblue,citecolor=darkblue}
+          
+\newcommand{\Rcode}[1]{{\texttt{#1}}}
+\newcommand{\Rpackage}[1]{\textsf{#1}}
+\newcommand{\software}[1]{\textsf{#1}}
+\newcommand{\R}{\software{R}}
+
+\title{FlowSorted.Blood.450k User's Guide\\
+  A Public Illumina 450k Dataset}
+\author{Andrew E. Jaffe}
+\date{Modified: September 11, 2013.  Compiled: \today}
+
+
+\usepackage{Sweave}
+\begin{document}
+\maketitle
+\setcounter{secnumdepth}{1} 
+
+\section{Introduction}
+
+The \Rpackage{FlowSorted.Blood.450k} package contains publicly available Illumina HumanMethylation450 (``450k'') DNA methylation microarray data from a recent publication by Reinius et al. 2012 \cite{reinius2012}, consisting of 60 samples, formatted as an \Rcode{RGset} object for easy integration and normalization using existing Bioconductor packages (the code for creating the R object from the raw ``.idat'' files is provided in the package as well at \texttt{inst/scripts/getKereData.R}). For example, this dataset may be useful ``example'' data for other packages exploring, normalizing, or analyzing DNA methylation data.
+
+\subsection{Data}
+
+Researchers may find this package useful as these samples represent different cellular populations of whole blood generated on the same 6 male individuals using flow sorting, a experimental procedure that can separate heterogeneous biological samples like blood into pure cellular populations, like CD4+ and CD8+ T-cells. This data can be directly integrated with the \Rpackage{minfi} Bioconductor package to estimate cellular composition in users' whole blood Illumina 450k samples using a modified version of the algorithm described in Houseman et al. 2012 \cite{houseman2012}.
+
+\subsection{Tables}
+
+This package also contains several useful tables, including the degree of association between cellular composition and each CpG on the Illumina 450k: CpGs identified in whole blood for phenotypes or outcomes should be treated with caution, especially if the outcome of interest correlates with cellular composition. Lastly, there is a table containing the average DNAm by cell type for the probes determined to best estimate cellular composition, which can be passed to the cellular estimation function. These probes appear to be least susceptible to association with other phenotypes, given the very high degree of association with cellular composition, and can therefore be suitable ``control probes'' for removing unwanted variation \cite{gagnon2012}.
+
+\bibliographystyle{unsrturl}
+\bibliography{FlowSorted.Blood.450k}
+\end{document}

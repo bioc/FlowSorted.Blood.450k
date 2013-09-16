@@ -1,0 +1,12 @@
+Package: FlowSorted.Blood.450k
+Version: 0.99.0
+Title: Illumina HumanMethylation data on sorted blood cell populations
+Description: Raw data objects for the Illumina 450k DNA methylation
+	microarrays, and an object depicting which CpGs on the array are associated
+	with cell type.
+Author: Andrew E Jaffe
+Maintainer: Andrew E Jaffe <andrew.jaffe@libd.org>
+License: Artistic-2.0
+Depends: R (>= 2.13.0), minfi
+LazyData: yes
+biocViews: IlluminaChip, Homo_sapiens, DNAMethylation

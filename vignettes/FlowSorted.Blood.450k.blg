@@ -1,0 +1,45 @@
+This is BibTeX, Version 0.99c (Web2C 7.5.4)
+The top-level auxiliary file: FlowSorted.Blood.450k.aux
+The style file: unsrturl.bst
+Database file #1: FlowSorted.Blood.450k.bib
+You've used 3 entries,
+            2522 wiz_defined-function locations,
+            583 strings with 5403 characters,
+and the built_in function-call counts, 1169 in all, are:
+= -- 94
+> -- 69
+< -- 0
++ -- 22
+- -- 19
+* -- 79
+:= -- 197
+add.period$ -- 9
+call.type$ -- 3
+change.case$ -- 3
+chr.to.int$ -- 0
+cite$ -- 3
+duplicate$ -- 27
+empty$ -- 109
+format.name$ -- 19
+if$ -- 296
+int.to.chr$ -- 0
+int.to.str$ -- 3
+missing$ -- 3
+newline$ -- 18
+num.names$ -- 3
+pop$ -- 15
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 79
+stack$ -- 0
+substring$ -- 49
+swap$ -- 3
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 0
+while$ -- 7
+width$ -- 4
+write$ -- 35
