@@ -49,8 +49,8 @@ with the package due to their size. Instead, they are hosted on Zenodo
 
 <<usage, eval=FALSE>>=
 library(FlowSorted.Blood.450k)
-rgset <- FlowSorted.Blood.450k()
-compTable <- FlowSorted.Blood.450k.compTable()
+rgset <- FlowSorted.Blood.450k
+compTable <- FlowSorted.Blood.450k.compTable
 @
 
 \section*{Data}

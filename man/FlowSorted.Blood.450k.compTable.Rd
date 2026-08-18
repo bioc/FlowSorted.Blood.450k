@@ -17,7 +17,7 @@
     and downloaded on first use.
 }
 \usage{
-FlowSorted.Blood.450k.compTable()
+FlowSorted.Blood.450k.compTable
 }
 \details{
   We recommend using the CpG identifiers to match each probe from a user's 
@@ -74,7 +74,8 @@ DNAm_range: range of beta values
   cell type composition in blood using these data.}
 \examples{
 \donttest{
-tab <- FlowSorted.Blood.450k.compTable()
+library(FlowSorted.Blood.450k)
+tab <- FlowSorted.Blood.450k.compTable
 }
 }
 \keyword{datasets}

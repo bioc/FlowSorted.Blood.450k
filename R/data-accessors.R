@@ -19,24 +19,38 @@
     get(object_name, envir = e)
 }
 
-# Illumina 450k RGChannelSet on 60 flow-sorted whole blood samples
-# (Reinius et al. 2012). See ?FlowSorted.Blood.450k for details.
-FlowSorted.Blood.450k <- function() {
-    .flowsorted_blood_load(
-        rname = "FlowSorted.Blood.450k.rda",
-        url = "https://zenodo.org/records/21996984/files/FlowSorted.Blood.450k.rda?download=1",
-        md5 = "a9b938477ca63164415784d98838312e",
-        object_name = "FlowSorted.Blood.450k"
-    )
-}
+# Sets up FlowSorted.Blood.450k and FlowSorted.Blood.450k.compTable as
+# active bindings in the package namespace: referencing the bare name
+# (as with the historical lazy-loaded data() objects) downloads (once;
+# cached locally afterwards via BiocFileCache) and returns the object.
+# This preserves the get(pkgname)-style access used by
+# minfi::estimateCellCounts() and other downstream consumers.
+.onLoad <- function(libname, pkgname) {
+    ns <- asNamespace(pkgname)
 
-# Per-probe association table with blood cell composition. See
-# ?FlowSorted.Blood.450k.compTable for details.
-FlowSorted.Blood.450k.compTable <- function() {
-    .flowsorted_blood_load(
-        rname = "FlowSorted.Blood.450k.compTable.rda",
-        url = "https://zenodo.org/records/21996984/files/FlowSorted.Blood.450k.compTable.rda?download=1",
-        md5 = "16d7328c20f6a4b57e266017a70ca211",
-        object_name = "FlowSorted.Blood.450k.compTable"
-    )
+    .install_lazy_binding <- function(sym, loader) {
+        cached <- NULL
+        makeActiveBinding(sym, function() {
+            if (is.null(cached)) cached <<- loader()
+            cached
+        }, ns)
+    }
+
+    .install_lazy_binding("FlowSorted.Blood.450k", function() {
+        .flowsorted_blood_load(
+            rname = "FlowSorted.Blood.450k.rda",
+            url = "https://zenodo.org/records/21996984/files/FlowSorted.Blood.450k.rda?download=1",
+            md5 = "a9b938477ca63164415784d98838312e",
+            object_name = "FlowSorted.Blood.450k"
+        )
+    })
+
+    .install_lazy_binding("FlowSorted.Blood.450k.compTable", function() {
+        .flowsorted_blood_load(
+            rname = "FlowSorted.Blood.450k.compTable.rda",
+            url = "https://zenodo.org/records/21996984/files/FlowSorted.Blood.450k.compTable.rda?download=1",
+            md5 = "16d7328c20f6a4b57e266017a70ca211",
+            object_name = "FlowSorted.Blood.450k.compTable"
+        )
+    })
 }

@@ -20,7 +20,7 @@
 }
 
 \usage{
-FlowSorted.Blood.450k()
+FlowSorted.Blood.450k
 }
 
 \details{ The \code{FlowSorted.Blood.450k} object is based on samples
@@ -60,7 +60,8 @@ FlowSorted.Blood.450k()
   tools for estimating cell type composition in blood using these data..}
 \examples{
 \donttest{
-rgset <- FlowSorted.Blood.450k()
+library(FlowSorted.Blood.450k)
+rgset <- FlowSorted.Blood.450k
 }
 }
 \keyword{datasets}
