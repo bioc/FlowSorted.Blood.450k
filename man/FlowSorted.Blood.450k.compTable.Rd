@@ -1,17 +1,23 @@
 \name{FlowSorted.Blood.450k.compTable}
 \alias{FlowSorted.Blood.450k.compTable}
-\docType{data}
 \title{
 	Cell Composition Association Table
 }
 \description{
-    Association of each probe on the Illumina 450k with blood cell composition
-	Note that probes on the sex chromosomes and those that contain annotated 
-	single nucleotide polymorphisms (SNPs) have been filtered 
-	(see Methods section of Jaffe and Irizarry 2013, below)
+    This function downloads (once; cached locally afterwards via
+    \link[BiocFileCache:BiocFileCache-class]{BiocFileCache}) and returns
+    the table of association of each probe on the Illumina 450k with
+    blood cell composition. Note that probes on the sex chromosomes and
+    those that contain annotated single nucleotide polymorphisms (SNPs)
+    have been filtered (see Methods section of Jaffe and Irizarry 2013,
+    below).
+
+    As of package version 1.51.2, this data is no longer bundled directly
+    with the package; it is hosted on Zenodo (\doi{10.5281/zenodo.21996983})
+    and downloaded on first use.
 }
 \usage{
-data(FlowSorted.Blood.450k.compTable)
+FlowSorted.Blood.450k.compTable()
 }
 \details{
   We recommend using the CpG identifiers to match each probe from a user's 
@@ -67,6 +73,8 @@ DNAm_range: range of beta values
   derived from this one. See the minfi package for tools for estimating 
   cell type composition in blood using these data.}
 \examples{
-data(FlowSorted.Blood.450k.compTable)
+\donttest{
+tab <- FlowSorted.Blood.450k.compTable()
+}
 }
 \keyword{datasets}

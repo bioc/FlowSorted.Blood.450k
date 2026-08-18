@@ -1,23 +1,29 @@
 \name{FlowSorted.Blood.450k}
 \alias{FlowSorted.Blood.450k}
-\docType{data}
 \title{
   Illumina Human Methylation data from 450k on sorted blood cell
   populations
 }
 \description{
-  This \code{RGset} contains Illumina 450k DNA methylation measurements 
-  on 60 samples from Reinius et al. 2012, which can be used by the \link{minfi} 
-  package to estimate cellular composition from whole blood samples. This data may
-  also be useful to individuals as example Illumina 450k data for trying
-  preprocessing methods across a variety of Bioconductor packages.
+  This function downloads (once; cached locally afterwards via
+  \link[BiocFileCache:BiocFileCache-class]{BiocFileCache}) and returns
+  an \code{RGset} containing Illumina 450k DNA methylation measurements
+  on 60 samples from Reinius et al. 2012, which can be used by the
+  \link{minfi} package to estimate cellular composition from whole blood
+  samples. This data may also be useful to individuals as example
+  Illumina 450k data for trying preprocessing methods across a variety
+  of Bioconductor packages.
+
+  As of package version 1.51.2, this data is no longer bundled directly
+  with the package; it is hosted on Zenodo (\doi{10.5281/zenodo.21996983})
+  and downloaded on first use.
 }
 
 \usage{
-data(FlowSorted.Blood.450k)
+FlowSorted.Blood.450k()
 }
 
-\details{ The \code{FlowSortedBlood.450k} objects is based an samples
+\details{ The \code{FlowSorted.Blood.450k} object is based on samples
   assayed as part of Reinius et al (2012). Please cite this paper, if
   the data is used.  If you're using this data together with the
   \link{minfi} package, please see the package vignette for details on
@@ -26,7 +32,7 @@ data(FlowSorted.Blood.450k)
   A script for obtaining this dataset is available in the \code{scripts}
   directory of this package.
 }
-\format{
+\value{
   An object of class \code{RGChannelSet}.
 }
 \references{
@@ -53,6 +59,8 @@ data(FlowSorted.Blood.450k)
   derived from this one. See the minfi package for 
   tools for estimating cell type composition in blood using these data..}
 \examples{
-data(FlowSorted.Blood.450k)
+\donttest{
+rgset <- FlowSorted.Blood.450k()
+}
 }
 \keyword{datasets}

@@ -40,6 +40,19 @@ creating the R object from the raw \texttt{.idat} files is provided in the packa
 \texttt{inst/scripts/getKereData.R}). For example, this dataset may be useful as example data for
 other packages exploring, normalizing, or analyzing DNA methylation data.
 
+\section*{Usage}
+
+As of package version 1.51.2, the data objects in this package are no longer bundled directly
+with the package due to their size. Instead, they are hosted on Zenodo
+(\url{https://doi.org/10.5281/zenodo.21996983}) and downloaded on first use via
+\Rpackage{BiocFileCache}, which caches them locally so subsequent calls do not re-download:
+
+<<usage, eval=FALSE>>=
+library(FlowSorted.Blood.450k)
+rgset <- FlowSorted.Blood.450k()
+compTable <- FlowSorted.Blood.450k.compTable()
+@
+
 \section*{Data}
 
 Researchers may find this package useful as these samples represent different cellular populations
