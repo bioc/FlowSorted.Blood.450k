@@ -1,5 +1,5 @@
 Package: FlowSorted.Blood.450k
-Version: 1.51.2
+Version: 1.52.0
 Title: Illumina HumanMethylation Data on Sorted Blood Cell Populations
 Description: Provides functions to download (and cache locally via
 	BiocFileCache) data objects for the Illumina 450k DNA methylation
